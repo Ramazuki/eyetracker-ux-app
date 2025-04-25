@@ -1,0 +1,15 @@
+[project]
+name = "eyetracker-ux-app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mediapipe>=0.10.14",
+    "numpy>=2.2.5",
+    "opencv-python>=4.11.0.86",
+    "pandas>=2.2.3",
+    "seaborn>=0.13.2",
+    "tobii-research>=2.1.0",
+    "websockets>=12.0",
+]
