@@ -166,6 +166,33 @@ class EyeTracker:
                 left_eye = face_landmarks.landmark[33]  # Left eye center
                 right_eye = face_landmarks.landmark[263]  # Right eye center
 
+                # Draw eye landmarks on the frame
+                h, w, _ = frame.shape
+                # Convert normalized coordinates to pixel coordinates
+                left_eye_px = (int(left_eye.x * w), int(left_eye.y * h))
+                right_eye_px = (int(right_eye.x * w), int(right_eye.y * h))
+
+                # Draw circles at eye positions
+                cv2.circle(
+                    frame, left_eye_px, 5, (0, 255, 0), -1
+                )  # Green circle for left eye
+                cv2.circle(
+                    frame, right_eye_px, 5, (0, 255, 0), -1
+                )  # Green circle for right eye
+
+                # Draw additional eye landmarks
+                # Left eye outline landmarks (indices 33-46)
+                for i in range(33, 47):
+                    landmark = face_landmarks.landmark[i]
+                    px = (int(landmark.x * w), int(landmark.y * h))
+                    cv2.circle(frame, px, 2, (255, 0, 0), -1)  # Blue dots for outline
+
+                # Right eye outline landmarks (indices 263-276)
+                for i in range(263, 277):
+                    landmark = face_landmarks.landmark[i]
+                    px = (int(landmark.x * w), int(landmark.y * h))
+                    cv2.circle(frame, px, 2, (255, 0, 0), -1)  # Blue dots for outline
+
                 # Calculate average position
                 x = (left_eye.x + right_eye.x) / 2
                 y = (left_eye.y + right_eye.y) / 2
