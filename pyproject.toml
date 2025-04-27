@@ -9,6 +9,7 @@ dependencies = [
     "fastapi>=0.115.12",
     "httpx>=0.28.1",
     "numpy>=2.2.5",
+    "pre-commit>=4.2.0",
     "redis>=5.2.1",
     "tobii-research>=2.1.0",
     "uvicorn>=0.34.2",
