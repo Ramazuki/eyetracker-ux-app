@@ -2,3 +2,8 @@
 */__pycache__/
 */venv/
 */.env
+*/.ruff_cache/
+*/.mypy_cache/
+*/.pytest_cache/
+*/.idea/
+*/.DS_Store/
