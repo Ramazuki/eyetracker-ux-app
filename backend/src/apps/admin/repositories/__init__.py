@@ -1,0 +1,4 @@
+from .admin import AdminRepositoryImpl as AdminRepositoryImpl
+from .admin import AdminRepositoryProtocol as AdminRepositoryProtocol
+from .admin import AdminRepositoryFactoryProtocol as AdminRepositoryFactoryProtocol
+from .admin import AdminRepositoryFactoryImpl as AdminRepositoryFactoryImpl
